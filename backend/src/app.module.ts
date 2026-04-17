@@ -8,6 +8,7 @@ import { User } from './users/user.schema';
 import { UsersModule } from './users/users.module';
 import { Location } from './locations/location.schema';
 import { LocationsModule } from './locations/locations.module';
+import { ShipmentsModule } from './shipments/shipments.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { LocationsModule } from './locations/locations.module';
     UsersModule,
     AuthModule,
     LocationsModule,
+    ShipmentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
