@@ -6,6 +6,8 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { User } from './users/user.schema';
 import { UsersModule } from './users/users.module';
+import { Location } from './locations/location.schema';
+import { LocationsModule } from './locations/locations.module';
 
 @Module({
   imports: [
@@ -17,11 +19,12 @@ import { UsersModule } from './users/users.module';
       username: process.env.DB_USER ?? 'root',
       password: process.env.DB_PASSWORD ?? '',
       database: process.env.DB_NAME ?? 'almo_prueba_tecnica',
-      entities: [User],
+      entities: [User, Location],
       synchronize: false,
     }),
     UsersModule,
     AuthModule,
+    LocationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
