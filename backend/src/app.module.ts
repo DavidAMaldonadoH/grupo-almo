@@ -9,6 +9,8 @@ import { UsersModule } from './users/users.module';
 import { Location } from './locations/location.schema';
 import { LocationsModule } from './locations/locations.module';
 import { ShipmentsModule } from './shipments/shipments.module';
+import { Shipment } from './shipments/shipment.schema';
+import { ShipmentLocation } from './shipments/shipment-location.schema';
 
 @Module({
   imports: [
@@ -20,7 +22,7 @@ import { ShipmentsModule } from './shipments/shipments.module';
       username: process.env.DB_USER ?? 'root',
       password: process.env.DB_PASSWORD ?? '',
       database: process.env.DB_NAME ?? 'almo_prueba_tecnica',
-      entities: [User, Location],
+      entities: [User, Location, Shipment, ShipmentLocation],
       synchronize: false,
     }),
     UsersModule,

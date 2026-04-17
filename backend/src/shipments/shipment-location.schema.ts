@@ -25,9 +25,6 @@ export class ShipmentLocation {
   @Column({ type: 'enum', enum: ShipmentStatus })
   status!: ShipmentStatus;
 
-  @Column({ length: 500, nullable: true })
-  notes!: string | null;
-
   @CreateDateColumn()
   timestamp!: Date;
 

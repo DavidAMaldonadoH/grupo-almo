@@ -48,7 +48,6 @@ export class ShipmentsService {
           shipmentId: savedShipment.id,
           locationId: currentLocationId,
           status: status,
-          notes: 'Registro inicial del paquete.',
         });
         await queryRunner.manager.save(initialHistory);
       }
@@ -97,7 +96,6 @@ export class ShipmentsService {
         timestamp: entry.timestamp,
         status: entry.status,
         location: entry.location?.name || 'Desconocido',
-        notes: entry.notes,
       })),
     };
   }
